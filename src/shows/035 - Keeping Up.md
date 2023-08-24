@@ -10,7 +10,9 @@ Scott and Wes talk about how to deal with being overwhelmed with our fast paced 
 
 Wes' Note: Scott came up with the title for this one. I know.
 
-## Netlify
+## Sentry :)
+
+* **HELLO what's up? from the other window**
 
 [Netlify](https://netlify.com/syntax) is the best way to deploy and host a front-end website. All the features developers need right out of the box: Global CDN, Continuous Deployment, one click HTTPS and more. Hit up [netlify.com/syntax](https://netlify.com/syntax) for more info.
 
