@@ -1,0 +1,182 @@
+:root {
+	--yellow: #fabf46;
+	--black: #000;
+	--blackish: #1d1d1d;
+	--purple: #362d59;
+	--white: #fff;
+	--green: #3fa796;
+	--red: #eb5757;
+
+	--color-background: #fff;
+	--color-background-input: #fff;
+	--color-primary: #0044ff;
+	--color-primary-faded: #dbe4fd;
+	--color-background-preview: #f3f3f3;
+	--color-foreground-primary: #222;
+	--color-foreground-secondary: #777;
+
+	--color-background-preview-dark: #111;
+	--color-foreground-primary-dark: #f3f3f3;
+	--color-foreground-secondary-dark: #666;
+
+	--font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+	--font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+	--font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+	--font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+	--font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+	--font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+	--shadow-strength: 10%;
+	--shadow-color: 220 40% 2%;
+	--shadow-6: 0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+		0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+		0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+		0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+		0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+		0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
+		0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+}
+
+h1,
+.h1 {
+	font-size: var(--font-size-xxxl);
+}
+
+:is(.h1, .h2, .h3, .h4, .h5, .h6) {
+	overflow: hidden;
+}
+
+:is(.h1, .h2, .h3, .h4, .h5, .h6) .input {
+	position: relative;
+	white-space: nowrap;
+}
+:is(.h1, .h2, .h3, .h4, .h5, .h6) .input:focus {
+	margin-left: 0;
+}
+
+.h1 .input {
+	margin-left: -1.2ch;
+}
+.h2 .input {
+	margin-left: -2ch;
+}
+.h3 .input {
+	margin-left: -3ch;
+}
+.h4 .input {
+	margin-left: -4ch;
+}
+
+h2,
+.h2 {
+	font-size: var(--font-size-xxl);
+}
+h3,
+.h3 {
+	font-size: var(--font-size-xl);
+}
+h4,
+.h4 {
+	font-size: var(--font-size-lg);
+}
+h5,
+.h5 {
+	font-size: var(--font-size-md);
+}
+
+h6,
+.h6 .p,
+p {
+	font-size: var(--font-size-base);
+}
+
+p {
+	margin: 0;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	min-height: 100vh;
+
+	background: var(--color-background-preview);
+}
+
+.container *::selection {
+	background-color: var(--color-primary-faded);
+	color: var(--color-primary);
+}
+
+.form_container {
+	display: flex;
+	align-items: center;
+	padding: 42px 16px 0px;
+}
+
+.form_content {
+	width: 100%;
+	max-width: 520px;
+	margin: 0 auto;
+}
+
+.form {
+	width: 100%;
+}
+
+.heading {
+	color: var(--color-foreground-primary);
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.description {
+	margin-top: 8px;
+	margin-bottom: 32px;
+	color: var(--color-foreground-secondary);
+	font-size: 16px;
+}
+
+.form_group {
+	margin: 24px 0;
+}
+
+.form_group_grid {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.selection_container {
+	position: relative;
+}
+
+.label {
+	display: block;
+	margin-bottom: 8px;
+	color: var(--color-foreground-primary);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.ProseMirror .is-empty::before {
+	content: attr(data-placeholder);
+	float: left;
+	color: #ced4da;
+	pointer-events: none;
+	height: 0;
+}
