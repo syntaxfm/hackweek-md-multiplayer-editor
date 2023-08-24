@@ -127,5 +127,5 @@ Wes' Note: Scott came up with the title for this one. I know.
 
 Scott and Wes talk about how to deal with being overwhelmed with our fast paced industry. How do you keep you and your team's skills up to date?
 
-Wes' Note: Scott came up with the title for this one. I know.
+Wes' Note: Scott came up with the title for this one. I know
 
