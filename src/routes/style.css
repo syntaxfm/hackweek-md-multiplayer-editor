@@ -7,6 +7,7 @@
 	--green: #3fa796;
 	--red: #eb5757;
 
+	--color-foreground: black;
 	--color-background: #fff;
 	--color-background-input: #fff;
 	--color-primary: #0044ff;
@@ -18,6 +19,7 @@
 	--color-background-preview-dark: #111;
 	--color-foreground-primary-dark: #f3f3f3;
 	--color-foreground-secondary-dark: #666;
+	--shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
 
 	--font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
 	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -120,6 +122,11 @@ a {
 .container *::selection {
 	background-color: var(--color-primary-faded);
 	color: var(--color-primary);
+}
+
+.dark .container *::selection {
+	background-color: var(--yellow);
+	color: var(--color-background);
 }
 
 .form_container {

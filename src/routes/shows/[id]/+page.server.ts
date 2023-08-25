@@ -9,8 +9,8 @@ import remarkGfm from 'remark-gfm';
 import matter from 'gray-matter';
 import { fail } from '@sveltejs/kit';
 
-const owner = 'stolinski';
-const repo = 'syntax-notes';
+const owner = 'syntaxfm';
+const repo = 'hackweek-md-multiplayer-editor';
 const baseBranch = 'main';
 
 function prepare_content(content: string): string {
@@ -70,6 +70,7 @@ export const actions: Actions = {
 				headers: { Authorization: `token ${oauth_token}` }
 			}
 		);
+		console.log('existingMainFileResponse', existingMainFileResponse);
 
 		let sha;
 		if (existingMainFileResponse.status === 200) {
@@ -91,6 +92,7 @@ export const actions: Actions = {
 				})
 			}
 		);
+		console.log('createOrUpdateMainFileResponse', createOrUpdateMainFileResponse);
 
 		if (
 			createOrUpdateMainFileResponse.status < 200 ||

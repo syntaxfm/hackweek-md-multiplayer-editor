@@ -57,7 +57,7 @@
 			name: path, // any identifier - all connections sharing the same identifier will be synced
 			appId: 'q9g58ekg', // replace with YOUR_APP_ID
 			token:
-				'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTI5MDQyMDgsIm5iZiI6MTY5MjkwNDIwOCwiZXhwIjoxNjkyOTkwNjA4LCJpc3MiOiJodHRwczovL2NvbGxhYi50aXB0YXAuZGV2IiwiYXVkIjoic2NvdHRAc3ludGF4LmZtIn0.6DcDZdc5M-9K7_G6d3XzV3sAEmnWbh2ELOL7JQvMc2E', // replace with your JWT
+				'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTI5MTMyNzksIm5iZiI6MTY5MjkxMzI3OSwiZXhwIjoxNjkyOTk5Njc5LCJpc3MiOiJodHRwczovL2NvbGxhYi50aXB0YXAuZGV2IiwiYXVkIjoic2NvdHRAc3ludGF4LmZtIn0.4Fq5keSt4LWZnbw1UKP8prkXtdCzUds9skwP0bAZcxc', // replace with your JWT
 			document: doc
 		});
 
@@ -123,7 +123,7 @@ ${markdown_to_server}
 		const markdown_to_server_with_meta = await prepare_markdown();
 		const r = await fetch('?/draft', {
 			method: 'POST',
-			body: JSON.stringify({ markdown_to_server: markdown_to_server_with_meta, url, path })
+			body: JSON.stringify({ markdown_to_server: markdown_to_server_with_meta, path })
 		});
 
 		const result = deserialize(await r.text());
@@ -141,7 +141,7 @@ ${markdown_to_server}
 
 		const r = await fetch('?/publish', {
 			method: 'POST',
-			body: JSON.stringify({ markdown_to_server: markdown_to_server_with_meta, url, path })
+			body: JSON.stringify({ markdown_to_server: markdown_to_server_with_meta, path })
 		});
 
 		const result = deserialize(await r.text());
@@ -160,8 +160,10 @@ ${markdown_to_server}
 <Controls {editor} {top_pos} />
 
 <div class="publish-bar">
-	<button on:click={publish}>Publish</button>
-	<button on:click={save_draft}>Save Draft</button>
+	<button style="color: var(--color-primary-faded);" on:click={publish}>Publish</button>
+	<button style="background: var(--color-foreground-primary); " on:click={save_draft}
+		>Save Draft</button
+	>
 </div>
 
 <form id="meta">
@@ -180,10 +182,11 @@ ${markdown_to_server}
 <style>
 	:global(.ProseMirror) {
 		background: var(--color-background);
+		color: var(--color-foreground);
 		padding: 10px 10px 100px;
 		min-height: 80vh;
 		margin: 5px;
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+		box-shadow: var(--shadow);
 		border-radius: 4px;
 	}
 
@@ -195,13 +198,30 @@ ${markdown_to_server}
 		width: 100%;
 		font-weight: bold;
 		margin-bottom: 1rem;
+		border: none;
+		border-radius: 4px;
+		padding: 5px;
+		box-shadow: var(--shadow);
 	}
 
 	.publish-bar {
 		padding: 20px 20px 0;
+		text-align: right;
 	}
 
 	.notes {
 		margin: 0 20px;
+	}
+
+	button {
+		cursor: pointer;
+		border: none;
+		padding: 5px 15px;
+		border-radius: 4px;
+		background: var(--color-primary);
+		color: white;
+		font-weight: bold;
+		font-size: var(--font-size-lg);
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
 	}
 </style>

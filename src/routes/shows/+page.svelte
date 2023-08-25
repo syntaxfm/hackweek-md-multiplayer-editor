@@ -29,4 +29,20 @@
 		border-radius: 5px;
 		padding: 2px 5px;
 	}
+
+	ul {
+		list-style: none;
+		font-size: var(--font-size-lg);
+		font-weight: bold;
+		color: var(--color-foreground, black);
+	}
+
+	a {
+		transition: 0.3s ease-in-out all;
+	}
+	a:hover {
+		padding-left: 20px;
+		background: var(--color-primary);
+		color: var(--color-primary-faded);
+	}
 </style>
